@@ -9,52 +9,10 @@ To run the program, use:
 cabal run
 
 The database has to consist of 6 tables.
-+-----------------------+
-| Tables_in_software_db |
-+-----------------------+
-| builds                |
-| computers             |
-| installations         |
-| programs              |
-| statistics            |
-| users                 |
-+-----------------------+
+*builds                
+*computers
+*installations
+*programs
+*statistics
+*users
 
-
-+-----------------+      +----------+
-| statistics      |      | users    |
-+-----------------+      +----------+
-| id              |   +--| id       |
-| user_id         |---+  | name     |
-| installation_id |---+  | position |
-| exec_time       |   |  +----------+
-+-----------------+   |
-                      |
-                      |
-                      |     +---------------+
-                      |     | installations |           +------------------+
-                      |     +---------------+           | computers        |
-                      +-----| id            |           +------------------+
-                            | computer_id   |-----------| id               |
-                            | program_id    |-----+     | room             |
-                            +---------------+     |     | operating_system |
-                                                  |     | vendor           |
-                                                  |     +------------------+
-                            +-------------+       |
-                            | programs    |       |
-                            +-------------+       |
-                            | id          |-------+
-                            | name        |
-                            | description |
-    +-----------------------| build_id    |
-    |                       | publisher   |
-    |                       | license     |
-    |                       +-------------+
-    |   +--------------+
-    |   | builds       |
-    |   +--------------+
-    +---| id           |
-        | architecture |
-        | format       |
-        | source       |
-        +--------------+
