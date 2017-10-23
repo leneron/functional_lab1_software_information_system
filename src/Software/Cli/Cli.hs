@@ -13,10 +13,14 @@ import Data.Pool
 import Software.Cli.Printers
 import TextUtils
 
+--Module for splitting and recognition the input command name 
+--and passing the parameters to the appropriate handlers
+
 main pool = do
   putStrLn "Enter the command (use 'help' if needed):"
   mainLoop pool
 
+--Run the main loop forever until user interrupts it or quit 
 mainLoop pool = do
   putStr "software> "
   hFlush stdout
@@ -24,6 +28,7 @@ mainLoop pool = do
   continue <- withResource pool $ \conn ->  processCommand conn (splitWithQuotes line)
   when continue $ mainLoop pool
 
+--Processing the commands with pattern matching 
 processCommand conn ("create":"builds":fields)        = createEntryBuilds fields conn
 processCommand conn ("create":"computers":fields)     = createEntryComputers fields conn
 processCommand conn ("create":"installations":fields) = createEntryInstallations fields conn

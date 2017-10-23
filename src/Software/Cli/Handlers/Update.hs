@@ -4,6 +4,8 @@ module Software.Cli.Handlers.Update (
   updateEntryUsers, updateEntryStatistics
 ) where
 
+--Update query handlers
+
 import qualified Software.Database.Builds as Builds
 import qualified Software.Database.Computers as Computers
 import qualified Software.Database.Installations as Installations

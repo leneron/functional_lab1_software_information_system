@@ -2,6 +2,9 @@ module Software.Cli.Printers (
 	printResult, quit, printHelp, printError
 ) where
 
+--Functions for easier print
+--available CLI commands are defined here
+
 import System.IO
 
 printResult :: Bool -> IO Bool
@@ -57,7 +60,7 @@ help =
   ,"search <params> -- search available info about"
   ,"search user history <user_name>"
   ,"search room <room>"
-  ,"search program top <start[YYYY-MM-DD HH:MM:SS]> <end[YYYY-MM-DD HH:MM:SS]>\n"
+  ,"search program usage <start[YYYY-MM-DD HH:MM:SS]> <end[YYYY-MM-DD HH:MM:SS]>\n"
   ,"quit               - quit"
   ,"help               - help"
   ]

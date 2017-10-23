@@ -3,6 +3,8 @@ module Software.Database.Computers (
     Id, Room, OperatingSystem, Vendor
   ) where
 
+--Module to implement CRUD for computers table
+
 import Prelude hiding (read)
 import Database.HDBC
 import qualified Data.ByteString.Char8 as BS

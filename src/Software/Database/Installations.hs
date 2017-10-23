@@ -3,6 +3,8 @@ module Software.Database.Installations (
     Id
   ) where
 
+--Module to implement CRUD for installations table
+
 import Prelude hiding (read)
 import Database.HDBC
 import qualified Data.ByteString.Char8 as BS

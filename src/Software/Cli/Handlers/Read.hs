@@ -4,6 +4,9 @@ module Software.Cli.Handlers.Read (
   readEntriesUsers, readEntriesStatistics
 ) where
 
+--Read query handlers
+--Read the whole tables and display them
+
 import qualified Software.Database.Builds as Builds
 import qualified Software.Database.Computers as Computers
 import qualified Software.Database.Installations as Installations

@@ -1,5 +1,9 @@
 # Revision history for software
 
-## 0.1.0.0  -- YYYY-mm-dd
+## 0.1.0.0  -- 2017-10-21
 
-* First version. Released on an unsuspecting world.
+* Comments are added.
+
+## 0.1.0.0  -- 2017-10-19
+
+* First version.

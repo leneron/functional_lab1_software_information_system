@@ -3,6 +3,8 @@ module Software.Database.Users (
     Id, Name, Position
   ) where
 
+--Module to implement CRUD for users table
+
 import Prelude hiding (read)
 import Database.HDBC
 import qualified Data.ByteString.Char8 as BS
@@ -11,21 +13,6 @@ import Data.Word
 type Id = Word32
 type Name = String
 type Position = String
-
--- positionFromStr :: String -> Position
--- positionFromStr "student" = Student
--- positionFromStr "assistant" = Assistant
--- positionFromStr "professor" = Professor
--- positionFromStr "management" = Management
--- positionFromStr "other" = Other
-
--- strFromPosition :: Position -> String
--- strFromPosition Student = "student"
--- strFromPosition Assistant = "assistant"
--- strFromPosition Professor = "professor"
--- strFromPosition Management = "management"
--- strFromPosition Other = "other"
-
 
 create :: IConnection a => Name -> Position -> a -> IO Bool
 create name position conn =

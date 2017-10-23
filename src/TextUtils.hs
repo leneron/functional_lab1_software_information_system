@@ -1,5 +1,9 @@
 module TextUtils (splitWithQuotes) where
 
+--Used for splitting the command arguments
+--Will split by a whitespace, 
+--but consider a single argument in case of text in quotes
+
 splitWithQuotes = outsideQuote [] . (' ':)
 
 add c res = if null res then [[c]] else map (++[c]) res

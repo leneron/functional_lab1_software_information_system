@@ -6,8 +6,9 @@ import qualified Software.Database.Computers as Computers
 import qualified Software.Database.Statistics as Statistics
 import qualified Software.Database.Search as Search
 
-
 import Software.Cli.Printers
+
+--Functions to handle the incoming commands and call query module
 
 searchUserHistory name conn =
   Search.searchUserHistory name conn >>= mapM_ print >> return True

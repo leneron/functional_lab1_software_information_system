@@ -3,6 +3,8 @@ module Software.Database.Builds (
     Id, Architecture, Format, Source
   ) where
 
+--Module to implement CRUD for builds table
+
 import Prelude hiding (read)
 import Database.HDBC
 import qualified Data.ByteString.Char8 as BS

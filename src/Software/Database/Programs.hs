@@ -3,6 +3,8 @@ module Software.Database.Programs (
     Id, Name, Description, Publisher, License
   ) where
 
+--Module to implement CRUD for programs table
+
 import Prelude hiding (read)
 import Database.HDBC
 import qualified Data.ByteString.Char8 as BS

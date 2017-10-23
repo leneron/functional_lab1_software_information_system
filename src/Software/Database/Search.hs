@@ -13,6 +13,7 @@ import qualified Software.Database.Programs as Programs
 import qualified Software.Database.Statistics as Statistics
 import qualified Software.Database.Users as Users
 
+--Searching the user history of programs usage
 searchUserHistory :: IConnection a => Users.Name -> a -> IO [(Statistics.Id, Users.Name, 
                                                               Programs.Name, Statistics.ExecTime)]
 searchUserHistory name conn = do
@@ -30,6 +31,7 @@ searchUserHistory name conn = do
            (id, BS.unpack user_name, BS.unpack program_name, exec_time)
     unpack x = error $ "Error: " ++ show x
 
+--Search the existing software on the computers in the room
 searchRoom :: IConnection a => Computers.Room -> a -> IO [(Computers.Id, Computers.OperatingSystem, Computers.Vendor, 
                                                            Programs.Name, Builds.Architecture, Builds.Format)]
 searchRoom room conn = do
@@ -49,6 +51,7 @@ searchRoom room conn = do
             BS.unpack program_name, BS.unpack architecture, BS.unpack format)
     unpack x = error $ "Error: " ++ show x
 
+--Search top-used programs between the dates
 searchProgramTop :: IConnection a => Statistics.ExecTime -> Statistics.ExecTime -> a -> IO [(Programs.Name, Int64)]
 searchProgramTop start end conn = do
   result <- quickQuery' conn query [SqlLocalTime start, SqlLocalTime end]
