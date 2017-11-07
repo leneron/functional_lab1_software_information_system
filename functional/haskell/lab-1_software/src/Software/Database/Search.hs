@@ -20,7 +20,7 @@ searchUserHistory name conn = do
   result <- quickQuery' conn query [SqlString name]
   return $ map unpack result
   where
-    query = "select u.name, p.name, s.exec_time " ++ 
+    query = "select s.id, u.name, p.name, s.exec_time " ++ 
             "from statistics s " ++ 
             "inner join users u on s.user_id = u.id " ++
             "inner join installations i on s.installation_id = i.id " ++
