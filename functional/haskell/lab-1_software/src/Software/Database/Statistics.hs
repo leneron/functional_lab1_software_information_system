@@ -52,6 +52,6 @@ delete id conn =
   withTransaction conn (delete' id)
 
 delete' id conn = do
-  changed <- run conn "delete from builds where id = ?"
+  changed <- run conn "delete from statistics where id = ?"
                  [SqlWord32 id]
   return $ changed == 1
