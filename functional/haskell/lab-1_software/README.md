@@ -9,10 +9,10 @@ To run the program, use:
 cabal run
 
 The database has to consist of 6 tables.
-*builds                
-*computers
-*installations
-*programs
-*statistics
-*users
+* builds                
+* computers
+* installations
+* programs
+* statistics
+* users
 
